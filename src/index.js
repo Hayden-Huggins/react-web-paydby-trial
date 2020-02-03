@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FetchRandomUser from './components/FetchRandomUser';
+import App from './components/App';
+import './stylesheets/stylesheet.css'
+import {BrowserRouter} from 'react-router-dom'
 
-ReactDOM.render(<FetchRandomUser />, document.getElementById('root'));
+
+ReactDOM.render(<BrowserRouter><App/></BrowserRouter>, document.getElementById('root'));
