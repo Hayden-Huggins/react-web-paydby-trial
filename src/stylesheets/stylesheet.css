@@ -23,7 +23,8 @@ li:nth-child(odd)
 }
 
 .welcome{
-    font-size: 50px;;
+    font-size: 50px;
+    text-align: center;
 }
 
 .identity-colour{
@@ -31,13 +32,29 @@ li:nth-child(odd)
 }
 
 li a {
-    display: inline;
-    border-radius: 0px;
-    color: white;
+    display: block;
     border-radius: 0px;
     text-decoration: none;
+    list-style-type: none;
+    display: inline;
   }
 
-  li a:hover {
-    background-color: #111;
-  }
+.nav{
+      background-color: #CB1C8A;
+      overflow: hidden;
+      border-radius: 15px;
+      justify-content: center;
+}
+
+.nav a{
+    float: left;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav a:hover{
+    background-color: #f3a5d6;
+}
+

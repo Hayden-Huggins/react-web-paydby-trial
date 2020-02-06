@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom'
 
 class Nav extends Component{
     render(){
-        return <ul>
-                <li><Link to={"/Tasks"}>Tasks</Link></li>
-                <li><Link to={"/Posts"}>Posts</Link></li>
-              </ul>
+        return <div className="nav container-fluid">
+                <a className="col-lg-1 col-sm-4"><Link to={"/"}>Home</Link></a>
+                <a className="col-lg-1 col-sm-4"><Link to={"/Tasks"}>Tasks</Link></a>
+                <a className="col-lg-1 col-sm-4"><Link to={"/Posts"}>Posts</Link></a>
+              </div>
     }
 }
 
