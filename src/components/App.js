@@ -1,54 +1,12 @@
-import React from 'react'
-import Tasks from './Tasks'
-import Posts from './Posts'
-import Nav from './Nav'
-import Welcome from './Welcome'
-import UserDetails from './UserDetails'
-import {Link} from 'react-router-dom'
-import {Route} from 'react-router-dom'
+import Main from './Main'
+import {connect} from 'react-redux'
 
-export default class App extends React.Component{
+// mapping the user state down to all components of this app 
+function mapStateToProps(state)
+{
+    return {user: state}
+}
 
-    state={
-        loading: true,
-        person: null
-    }
+const App = connect(mapStateToProps)(Main)
 
-    // making asyncronus API call to API endpoint
-    async componentDidMount(){
-        const url = "https://www.mocky.io/v2/5b9751e5300000332a0bd52d";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({person: data, loading: false})
-        console.log(data);
-        console.log(this.state.person.data.first_name);
-    }
-
-    render(){
-        return <div>
-                <div><Nav/></div>
-            <Route exact path = "/" render={() => (
-                <div>
-                    <Welcome/>
-                    <UserDetails/>
-                </div>
-            )}/>
-
-            <Route path = "/Tasks" render={() => (
-                <div>
-                    <Tasks/>
-                </div>
-            )}/>
-
-            <Route path = "/Posts" render={() => (
-                <div>
-                    <Posts/>
-                </div>
-            )}/>
-
-                </div>
-                     
-        
-    }
-} 
-
+export default App
